@@ -48,9 +48,10 @@ def local(ctx):
 
 
 @task
-def create(ctx, nodes=4): # 创建机器实例  nodes表示在一台机器上跑多少个节点
+def create(ctx, nodes=[4,4,4,4]): # 创建机器实例  nodes表示在一台机器上跑多少个节点
     ''' Create a testbed'''
     try:
+        nodes=[4,4,4,4]
         InstanceManager.make().create_instances(nodes)
     except BenchError as e:
         Print.error(e)
