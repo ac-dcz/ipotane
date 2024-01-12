@@ -16,7 +16,7 @@ def local(ctx):
         'rate': 40_000,
         'tx_size': 16,
         'faults': 0,
-        'duration': 100,
+        'duration': 30,
     }
     node_params = {
         'consensus': {
@@ -26,7 +26,7 @@ def local(ctx):
             'max_payload_size': 1_000,
             'min_block_delay': 0,
             'network_delay': 10_000, # message delay on the leaders' proposals during DDoS
-            'ddos': True, # True for DDoS attack on the leader, False otherwise
+            'ddos': False, # True for DDoS attack on the leader, False otherwise
             'random_ddos': False,
             'random_ddos_chance': 10,
             'fallback_length': 2,
@@ -168,6 +168,6 @@ def kill(ctx):
 def logs(ctx):
     ''' Print a summary of the logs '''
     try:
-        LogParser.process('./logs').print("./results/temp_result.txt","./results/temp_txs.txt")
+        LogParser.process('./logs').print("./results/temp_result.txt","./results/temp_txs.txt","./results/temp_latency.txt")
     except ParseError as e:
         Print.error(BenchError('Failed to parse logs', e))

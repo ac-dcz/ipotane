@@ -341,7 +341,8 @@ class Bench:
                         )
                         self._logs(hosts, faults, protocol, ddos).print(
                             PathMaker.result_file(n, r, bench_parameters.tx_size, faults),
-                            PathMaker.txs_file(n, r, bench_parameters.tx_size, faults)
+                            PathMaker.txs_file(n, r, bench_parameters.tx_size, faults),
+                            PathMaker.latency_file(n,r,bench_parameters.tx_size,faults)
                         )
                     except (subprocess.SubprocessError, GroupException, ParseError) as e:
                         self.kill(hosts=hosts)

@@ -68,10 +68,14 @@ class PathMaker:
     @staticmethod
     def txs_file(nodes, rate, tx_size, faults):
         return join(
-            PathMaker.results_path(), f'txs-{nodes}-any-{tx_size}-{faults}.txt'
+            PathMaker.results_path(), f'txs-{nodes}-{rate}-{tx_size}-{faults}.txt'
         )
     
-
+    @staticmethod
+    def latency_file(nodes,rate,tx_size,faults):
+        return join(
+            PathMaker.results_path(), f'latency-{nodes}-{rate}-{tx_size}-{faults}.txt'
+        )
     @staticmethod
     def plots_path():
         return 'plots'
