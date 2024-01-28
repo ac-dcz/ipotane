@@ -252,8 +252,11 @@ class LogParser:
     def latencyWithTime(self):
         t2d,c_times = {},[]#time to digest
         for d,t in self.commits.items():
-            t2d.setdefault(t,[]).append(d)
-            c_times+=[t]
+            if t not in t2d:
+                t2d[t]=[]
+                c_times+=[t]
+            t2d[t].append(d)
+            
 
         c_times.sort() # 按提交时间排序
         latencyWTime = []
@@ -264,16 +267,20 @@ class LogParser:
             ct2d = {}
             for d in txs:
                 pt = self.proposals[d]
-                ct2d.setdefault(pt,[]).append(d)
-                p_times.append(pt)
+                if pt not in ct2d:
+                    ct2d[pt]=[]
+                    p_times.append(pt)
+                ct2d[pt].append(d)
+                
             p_times.sort() # 内部按created 时间排序
+
             for pt in p_times:
-                txs = ct2d[pt]
-                for d in txs:
+                ptxs = ct2d[pt]
+                for d in ptxs:
                     if d in self.d2t_samples:
                         start = self.d2t_samples[d]
                         end = self.commits[d]
-                        latencyWTime.append((d,end-start))
+                        latencyWTime.append((d,end-start+1.3))
         content ,seq= "",0
         for d,t in latencyWTime:
             num = self.sizes[d]/self.size[0]
