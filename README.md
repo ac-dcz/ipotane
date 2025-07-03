@@ -4,7 +4,7 @@
 
 # Ipotane
 
-**State-of-the-art asynchronous Byzantine Fault Tolerance (BFT) protocols integrate a partially-synchronous optimistic
+State-of-the-art asynchronous Byzantine Fault Tolerance (BFT) protocols integrate a partially-synchronous optimistic
 path. Their ultimate goal is to match the performance of a
 partially-synchronous protocol in favorable situations and that of
 a purely asynchronous protocol in unfavorable situations. While
@@ -16,7 +16,7 @@ unfavorable situations due to slow detection of optimistic path
 failures. Another recent work, ParBFT (CCS'23) ensures good
 latency in all situations but suffers from reduced throughput
 in unfavorable situations due to the use of extra Asynchronous
-Binary Agreement (ABA) instances.**
+Binary Agreement (ABA) instances.
 
 ## Quick Start
 
