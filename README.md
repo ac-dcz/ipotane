@@ -18,7 +18,40 @@ latency in all situations but suffers from reduced throughput
 in unfavorable situations due to the use of extra Asynchronous
 Binary Agreement (ABA) instances.
 
+## Environment Setup
+
+You have two options to set up the development environment:
+
+### Option 1: Using Docker (Recommended)
+
+If you prefer not to manually configure the development environment, you can use the provided Dockerfile which includes all necessary dependencies:
+
+```bash
+# Build the Docker image
+docker build -t ipotane .
+
+# Run the container
+docker run -it --name ipotane-dev ipotane /bin/bash
+```
+
+The Docker image includes:
+- Rust toolchain with nightly version
+- RISC-V cross-compilation tools
+- All development dependencies (clang, tmux, cmake, etc.)
+- Python 3 and other required tools
+
+### Option 2: Manual Setup
+
+Alternatively, you can manually install the required dependencies on your local machine. You'll need:
+- Rust (nightly version)
+- Clang
+- tmux
+- Python 3.9+
+- Other development tools as specified in the Dockerfile
+
 ## Quick Start
+
+### 
 
 Ipotane is written in Rust, but all benchmarking scripts are written in Python and run with [Fabric](http://www.fabfile.org/).
 To deploy and benchmark a testbed of 4 nodes on your local machine, clone the repo and install the python dependencies:
