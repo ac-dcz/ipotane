@@ -71,34 +71,44 @@ $ fab local
 This command may take a long time the first time you run it (compiling rust code in `release` mode may be slow) and you can customize a number of benchmark parameters in `fabfile.py`. When the benchmark terminates, it displays a summary of the execution similarly to the one below.
 
 ```
+Starting local benchmark
+Setting up testbed...
+Running ParBFT
+0 faults
+Timeout 1000 ms, Network delay 10000 ms
+DDOS attack False
+Waiting for the nodes to synchronize...
+Running benchmark (30 sec)...
+Parsing logs...
+
 -----------------------------------------
  SUMMARY:
 -----------------------------------------
  + CONFIG:
- Protocol: 0
- DDOS attack: False
+ Protocol: 1 
+ DDOS attack: False 
  Committee size: 4 nodes
  Input rate: 10,000 tx/s
  Transaction size: 512 B
  Faults: 0 nodes
- Execution time: 32 s
+ Execution time: 31 s
 
- Consensus timeout delay: 2,000 ms
+ Consensus timeout delay: 1,000 ms
  Consensus sync retry delay: 10,000 ms
- Consensus max payloads size: 500 B
+ Consensus max payloads size: 1,000 B
  Consensus min block delay: 0 ms
- Mempool queue capacity: 10,000 B
- Mempool max payloads size: 15,000 B
+ Mempool queue capacity: 100,000 B
+ Mempool max payloads size: 500,000 B
  Mempool min block delay: 0 ms
 
  + RESULTS:
- Consensus TPS: 10,042 tx/s
- Consensus BPS: 5,141,658 B/s
- Consensus latency: 12 ms
+ Consensus TPS: 10,020 tx/s
+ Consensus BPS: 5,130,155 B/s
+ Consensus latency: 6 ms
 
- End-to-end TPS: 10,001 tx/s
- End-to-end BPS: 5,120,320 B/s
- End-to-end latency: 44 ms
+ End-to-end TPS: 10,000 tx/s
+ End-to-end BPS: 5,120,084 B/s
+ End-to-end latency: 19 ms
 -----------------------------------------
 ```
 
