@@ -293,7 +293,7 @@ class Bench:
         if node_parameters.protocol == 0:
             Print.info('Running HotStuff')
         elif node_parameters.protocol == 1:
-            Print.info('Running ParBFT1')
+            Print.info('Running Ipotane')
         elif node_parameters.protocol == 2:
             Print.info('Running SMVBA')
         else:

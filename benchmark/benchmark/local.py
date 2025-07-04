@@ -106,7 +106,7 @@ class LocalBench:
             if self.node_parameters.protocol == 0:
                 Print.info('Running HotStuff')
             elif self.node_parameters.protocol == 1:
-                Print.info('Running ParBFT')
+                Print.info('Running Ipotane')
             elif self.node_parameters.protocol == 2:
                 Print.info('Running SMVBA')
             else:

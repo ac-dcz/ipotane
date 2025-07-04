@@ -73,7 +73,7 @@ This command may take a long time the first time you run it (compiling rust code
 ```
 Starting local benchmark
 Setting up testbed...
-Running ParBFT
+Running Ipotane
 0 faults
 Timeout 1000 ms, Network delay 10000 ms
 DDOS attack False
@@ -152,8 +152,8 @@ The file [settings.json](https://github.com/ac-dcz/ipotane/blob/main/benchmark/s
         "front": 6000
     },
     "repo": {
-        "name": "chrion",
-        "url": "https://github.com/ac-dcz/chrion",
+        "name": "ipotane",
+        "url": "https://github.com/ac-dcz/ipotane",
         "branch": "main"
     },
     "instances": {
@@ -192,14 +192,14 @@ The the last block (`instances`) specifies the[AWS Instance Type](https://help.A
 
 ```json
 "instances": {
-    "type": "ecs.g6e.xlarge",
-    "regions": [
+        "type": "m5d.xlarge",
+        "regions": [
             "us-east-1",
             "eu-north-1",
             "ap-northeast-1",
             "ap-southeast-2"
-    ]
-}
+        ]
+    }
 ```
 
 **4. Create a testbed**
