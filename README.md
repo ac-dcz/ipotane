@@ -137,7 +137,7 @@ ssh-keygen -f ~/.ssh/AWS
 
 **3. Configure the testbed**
 
-The file [settings.json](https://github.com/ac-dcz/ipotane/blob/main/benchmark/settings.json) located in [Falcon/benchmark](https://github.com/ac-dcz/ipotane/blob/main/benchmark) contains all the configuration parameters of the testbed to deploy. Its content looks as follows:
+The file [settings.json](https://github.com/ac-dcz/ipotane/blob/main/benchmark/settings.json) located in [Ipotane/benchmark](https://github.com/ac-dcz/ipotane/blob/main/benchmark) contains all the configuration parameters of the testbed to deploy. Its content looks as follows:
 
 ```json
 {
