@@ -114,7 +114,7 @@ Parsing logs...
 
 ## AWS Benchmarks
 
-The following steps will explain that how to run benchmarks on Alibaba cloud across multiple data centers (WAN).
+The following steps will explain that how to run benchmarks on AWS cloud across multiple data centers (WAN).
 
 **1. Set up your AWS credentials**
 
@@ -161,8 +161,9 @@ The file [settings.json](https://github.com/ac-dcz/ipotane/blob/main/benchmark/s
         "regions": [
             "us-east-1",
             "eu-north-1",
-            "ap-northeast-1",
-            "ap-southeast-2"
+            "ap-southeast-2",
+            "us-west-1",
+            "ap-northeast-1"
         ]
     }
 }
@@ -196,15 +197,16 @@ The the last block (`instances`) specifies the[AWS Instance Type](https://help.A
         "regions": [
             "us-east-1",
             "eu-north-1",
-            "ap-northeast-1",
-            "ap-southeast-2"
+            "ap-southeast-2",
+            "us-west-1",
+            "ap-northeast-1"
         ]
     }
 ```
 
 **4. Create a testbed**
 
-The AWS instances are orchestrated with [Fabric](http://www.fabfile.org/) from the file [fabfile.py](https://github.com/ac-dcz/ipotane/blob/main/benchmark/fabfile.py) (located in [BFT-MVBA/benchmark](https://github.com/ac-dcz/Falcon/blob/main/benchmark)) you can list all possible commands as follows:
+The AWS instances are orchestrated with [Fabric](http://www.fabfile.org/) from the file [fabfile.py](https://github.com/ac-dcz/ipotane/blob/main/benchmark/fabfile.py) (located in [ipotane/benchmark](https://github.com/ac-dcz/ipotane/blob/main/benchmark)) you can list all possible commands as follows:
 
 The command `fab create` creates new AWS instances; open [fabfile.py](https://github.com/ac-dcz/ipotane/blob/main/benchmark/fabfile.py) and locate the `create` task:
 
@@ -224,7 +226,7 @@ Waiting for all instances to boot...
 Successfully created 8 new instances
 ```
 
-You can then install goland on the remote instances with `fab install`:
+You can then clone the repo and install rust on the remote instances with `fab install`:
 
 ```shell
 $ fab install
@@ -238,6 +240,10 @@ Initialized testbed of 10 nodes
 ```shell
 $ fab remote
 ```
+
+## License
+
+This software is licensed as [Apache 2.0](./LICENSE).
 
 ## Reference
 
